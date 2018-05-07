@@ -1,0 +1,28 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <h1>{{title}}</h1>
+  <p>Welcome to {{title}}</p>
+
+    <form method="get" action="/fcm-push" enctype="multipart/form-data">
+      <label for="token">User Token:</label>
+      <br>
+      <input type="text" name="token" id="token" placeholder="Enter token here" required/>
+      <br>
+      <br>
+
+      <label for="title">Title:</label>
+      <br>
+      <input type="text" name="title" id="title" placeholder="Enter message title here" required/>
+      <br>
+      <br>
+
+      <label for="message">Message:</label>
+      <br>
+      <textarea name="message" id="message" placeholder="Type your message" required></textarea>
+      <br>
+      <br>
+
+      <input type="submit" value="Send Message">
+    </form>
+{% endblock %}
